@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditional Statements and Loops Demo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h2>Assigment 1 - Random Number Generator & Counter</h2>
+    <p>Click the button below to generate a random number and determine if it's even or odd.</p>
+    <button onclick="generateNumber()">Generate Number</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function generateNumber() {
+        // num 1-100
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        // Display the random number
+        document.getElementById("result").innerHTML = "Generated Number: " + randomNumber;
+
+        // Check if the number is even or odd using conditional statements
+        if (randomNumber % 2 === 0) {
+            document.getElementById("result").innerHTML += "<br>It's an even number.";
+        } else {
+            document.getElementById("result").innerHTML += "<br>It's an odd number.";
+        }
+
+        // Use a loop to count from 1 to the generated number
+        document.getElementById("result").innerHTML += "<br>Counting from 1 to " + randomNumber + ":";
+        for (var i = 1; i <= randomNumber; i++) {
+            document.getElementById("result").innerHTML += " " + i;
+        }
+    }
+</script>
+</body>
+</html>
